@@ -18,7 +18,13 @@
 
 	
 	
-	<bean name="add"  class="com.learning.spring.model.Address">
+	<bean name="add1"  class="com.learning.spring.model.Address" primary="true">
+	
+		<property name="city" value="GZB"/>
+		<property name="state" value="UP"/>
+	
+	</bean>
+	<bean name="add2"  class="com.learning.spring.model.Address">
 	
 		<property name="city" value="Noida"/>
 		<property name="state" value="UP"/>
