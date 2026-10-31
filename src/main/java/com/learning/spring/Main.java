@@ -15,9 +15,6 @@ public class Main {
 
 		System.out.println(e1);
 
-		Employee e2 = ioc.getBean("emp2", Employee.class);
-
-		System.out.println(e2);
 
 	}
 
