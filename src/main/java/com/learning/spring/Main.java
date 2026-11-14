@@ -12,12 +12,8 @@ public class Main {
 		ApplicationContext ioc = new AnnotationConfigApplicationContext("com.learning.spring");
 
 		Employee e1 = ioc.getBean("employee",Employee.class);
-		Employee e2 = ioc.getBean("employee",Employee.class);
-		Employee e3 = ioc.getBean("employee",Employee.class);
 
 		System.out.println(e1);
-		System.out.println(e2);
-		System.out.println(e3);
 
 	}
 

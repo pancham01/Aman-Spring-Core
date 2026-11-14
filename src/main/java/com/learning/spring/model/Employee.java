@@ -1,16 +1,18 @@
 package com.learning.spring.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Scope(value = "prototype")
 public class Employee {
 	
 	private int id;
 	private String name,gender;
 	
-	private Address address;
+	@Autowired
+	@Qualifier(value = "add2")
+	private EAddress address;
 	
 	public Employee() {
 		id = 111;
@@ -22,13 +24,13 @@ public class Employee {
 	
 	
 
-	public Address getAddress() {
+	public EAddress getAddress() {
 		return address;
 	}
 
 
-	@Autowired
-	public void setAddress(Address address) {
+	
+	public void setAddress(EAddress address) {
 		this.address = address;
 		System.out.println("Employee.setAddress()");
 	}
