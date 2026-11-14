@@ -1,15 +1,39 @@
 package com.learning.spring.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+//@Scope(value = "prototype")
 public class Employee {
 	
 	private int id;
 	private String name,gender;
 	
+	private Address address;
+	
 	public Employee() {
-
+		id = 111;
+		name = "Guest";
+		gender = "male";
 		System.out.println("Employee.Employee()");
 	
 	}
+	
+	
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	@Autowired
+	public void setAddress(Address address) {
+		this.address = address;
+		System.out.println("Employee.setAddress()");
+	}
+
+
 
 	public Employee(int id, String name, String gender) {
 		super();
@@ -48,7 +72,9 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
 	}
+
+	
 	
 }
